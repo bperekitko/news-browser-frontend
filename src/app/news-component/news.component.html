@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>News</title>
+</head>
+
+<body>
+  <mat-grid-list cols="3" gutterSize="25px">
+    <mat-grid-tile *ngFor="let article of regionalNews.articles">
+      <div class="tile-title">{{article.date}} {{article.title}}</div>
+      <img src={{article.imageUrl}} />
+      <a href="{{article.articleUrl}}">
+        <mat-grid-tile-footer>More...</mat-grid-tile-footer>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</body>
+
+</html>

@@ -1,18 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NewsComponent } from './news-component/news.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NewsBrowserApiService } from './shared/api/news-browser-api-service';
+import { RouterModule } from '@angular/router';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewsComponent,
+    TopBarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    MatGridListModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: NewsComponent,
+      }
+    ]),
   ],
-  providers: [],
+  providers: [NewsBrowserApiService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

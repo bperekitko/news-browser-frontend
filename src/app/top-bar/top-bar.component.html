@@ -1,0 +1,10 @@
+<h1>Hello, choose country and category of news you would like to see</h1>
+<div>
+    <select (change)="onCountrySelected($event.target.value)">
+        <option *ngFor="let country of countries">{{country}}</option>
+    </select>
+    <select (change)="onCategorySelected($event.target.value)">
+        <option *ngFor="let category of categories">{{category}}</option>
+    </select>
+    <button (click)="onDisplayNewsClicked()">Show news</button>
+</div>
